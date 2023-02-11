@@ -1,102 +1,112 @@
-console.log("Hello world");
-// console.log() para imprimir en la consola del navegador
-// Precios de productos
-let cafe = 18;
-let arroz = 16;
+// Math.random(); // Numero aleatorio entre 0.x 1
+// Math.floor(); // Redondea para abajo 4.6 - 4
+// Math.ceil(); // Redondea para arriba 4.1 - 5
+// Math.round(); // Redondea 4.4 -4 || 4.6 - 5
 
-let totalCompra = cafe + arroz;
-let otroProducto = "18";
-// Operadores matematicos
-let division = 1 / 2; // La division
-let restante = 5 % 2; // El resto de una division
-let multiplicar = 2 * 3; // devuelve el Producto
+// ultima(penultima(antepenultima(primera())))
+// console.log(Math.round(Math.random() * 10));
+// console.log(Math.floor(4.5));
+// console.log(Math.ceil(4.001));
+// console.log(Math.round(4.5));
 
-let name = "octavio";
-let lastname = "lara";
+// Funcion que va a generar IDS de usuario
+// o-randomNumber
+// username.length te da
+// ["Hola", "Como", "estas"] -> Hola = elemento 0
 
-let edadParaEntrar = 18;
-let edadPedroPerez = 16;
-
-// Operadores logicos
-// console.log(edadPedroPerez == edadParaEntrar); // == compara valores
-
-// // Dos iguales compara nada mas el valor.
-// console.log(5 == "5");
-// // No igual(!=)
-// console.log(5 != 5);
-
-// // Triple igual compara valor y tipo
-// console.log(5 === "5");
-// let palabra = "Hola";
-// let segundaPalabra = "Como estas";
-// console.log(palabra === segundaPalabra);
-
-// console.log(6 > 5);
-// console.log(5 >= 5);
-// console.log(3 < 4);
-// console.log(4 <= 4);
-// console.log(edadPedroPerez >= edadParaEntrar);
-
-// || es para cuando uno solo se tenga que cumplir
-// console.log(2 == 2 || 3 == 4);
-
-// && es para cuando los dos se tengan que cumplir
-// console.log(2 == 2 && 3 == 4);
-
-function saluda() {
-  console.log("hola");
-}
-saluda();
-
-/* 
-  function nombreDeFuncion(Parametros){
-    bloque
+// La mayoria de las funciones tienen que retornar un valor
+function createUserId(username) {
+  if (username === undefined) {
+    return "Necesitas pasar un parametro"; // Cierra la funcion
   }
-*/
-
-// Declarando
-function suma(numero1 = 0, numero2 = 0, numero3 = 0) {
-  console.log(numero1 + numero2 + numero3);
+  const randomNumber = Math.round(Math.random() * 10);
+  return username[0] + randomNumber; // Punto de cierre
 }
 
-// NaN = Not A Number
-// suma(1, 2);
-// suma(3, 6);
-// suma(10, 12, 15);
-// suma();
+let random = createUserId();
 
-function saludaConNombreYDespide(nombre) {
-  if (nombre === undefined) {
-    // Esto se ejecuta si la condicion es verdad
-    console.log("Hola desconocido");
+function salute() {
+  return "hola";
+}
+
+function isEven(num) {
+  // Resto 5/2 = 1
+  if (num % 2 === 0) {
+    return true;
   } else {
-    // Esto se va a ejecutar si la condicion no es verdad
-    console.log("Hola " + nombre);
+    return false;
   }
-
-  // Dentro de la funcion, afuera de la condicion(if)
-  console.log("chao");
 }
 
-// saludaConNombreYDespide("Octavio");
-// saludaConNombreYDespide();
+let number1 = isEven(3); // false
+let number2 = isEven(4); // true
+let number3 = isEven(16); // true
 
-// Ver la edad de la persona y decir si puede entrar o no
-function puedeEntrarAlClub(age) {
-  let legalAge = 18; // Edad minima para entrar
-  let maxAge = 80; // Edad maxima para entrar
-  if (age >= legalAge && age < maxAge) {
-    console.log("puedes entrar");
-  } else if (age <= 15) {
-    console.log("Vamos a llamar a tu mama");
-  } else if (age > maxAge) {
-    console.log("Vaya pal jeriatrico");
+function printIsEven(even) {
+  if (even) {
+    console.log("Es un numero par");
   } else {
-    console.log("No puedes entrar");
+    console.log("Es un numero impar");
   }
 }
 
-puedeEntrarAlClub(25);
-puedeEntrarAlClub(16);
-puedeEntrarAlClub(10);
-puedeEntrarAlClub(84);
+// printIsEven(number1);
+// printIsEven(number2);
+// printIsEven(number3);
+
+// Loops - Ciclos - iteradores
+// For
+
+// let i dice que i vale 0 la primera vuelta
+for (let i = 0; i < 5; i++) {
+  // if (isEven(i)) {
+  //   console.log("Hola es un numero par " + i);
+  // }
+  // if (i === 1) {
+  //   console.log("Hola soy uno");
+  // } else if (i === 2) {
+  //   console.log("Hola soy un 2");
+  // } else if (i === 3) {
+  //   console.log("hola soy un 3");
+  // } else if (isEven(i)) {
+  //   console.log("Hola es un numero par " + i);
+  // }
+  // Final del loop
+  // i = i + 1;
+}
+
+const listaDeCosas = ["Octavio", "Jose", "Juan", 1, 2];
+// console.log(listaDeCosas[0], listaDeCosas[1]);
+
+// valor inicial (let i = 0), condicion, i = i +
+// for (let i = 0; i < 5; i++) {
+//   // console.log(i);
+//   // // console.log(listaDeCosas[0])
+//   // console.log(listaDeCosas[i]);
+// }
+
+// // Uno necesita saber cuando termina
+// for (let i = 0; i < 10; i++) {
+//   // console.log("haras 100 loops", i);
+// }
+
+let palabra = "abcdefghijk";
+console.log(palabra[0]);
+
+let esMenorDeEdad = false;
+
+// While se usa cuando no estas seguro de la cantidad de veces que se tiene que repetir
+
+while (esMenorDeEdad === false) {
+  let age = prompt("El portero: Cuantos años tienes");
+  if (parseInt(age) < 18) {
+    esMenorDeEdad = true;
+  }
+  console.log("edad", age);
+}
+
+console.log("Hola eres menor de edad");
+
+// for (let letra = 0; letra < palabra.length; letra = letra + 1) {
+//   console.log(palabra[letra]);
+// }
